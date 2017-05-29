@@ -1,1 +1,1 @@
-# ptt
+# creepytracker-application-template
