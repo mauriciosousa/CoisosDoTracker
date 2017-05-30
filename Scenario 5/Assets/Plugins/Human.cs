@@ -22,7 +22,7 @@ public class Human {
 	public void Update(Body newBody)
 	{
 		_body = newBody;
-		_id = _body.Properties[BodyPropertiesType.id];
+		_id = _body.Properties[BodyPropertiesType.UID];
 		_lastUpdated = DateTime.Now;
 	}
 }
