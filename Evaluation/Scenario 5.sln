@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 5.Plugins", "Scenario 5.Plugins.csproj", "{62352C0D-0C07-CFF4-899B-81238466DC3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 5", "Scenario 5.csproj", "{5BA1DDA1-DB36-9C45-008C-AFD050FB3C94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62352C0D-0C07-CFF4-899B-81238466DC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62352C0D-0C07-CFF4-899B-81238466DC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62352C0D-0C07-CFF4-899B-81238466DC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62352C0D-0C07-CFF4-899B-81238466DC3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA1DDA1-DB36-9C45-008C-AFD050FB3C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA1DDA1-DB36-9C45-008C-AFD050FB3C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA1DDA1-DB36-9C45-008C-AFD050FB3C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA1DDA1-DB36-9C45-008C-AFD050FB3C94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
