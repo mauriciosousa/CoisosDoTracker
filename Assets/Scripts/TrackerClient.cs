@@ -64,6 +64,6 @@ public class TrackerClient : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Label(new Rect(10, 10, 200, 35), "Number of users: " + _humans.Count);
+		//GUI.Label(new Rect(10, 10, 200, 35), "Number of users: " + _humans.Count);
 	}
 }
