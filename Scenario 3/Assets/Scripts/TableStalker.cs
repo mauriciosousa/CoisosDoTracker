@@ -5,32 +5,62 @@ using UnityEngine;
 public class TableStalker : MonoBehaviour {
 
     public Transform userProjection;
-    public Transform tableCenter;
     public GameObject table;
 
-    private SurfaceCalib calib;
+    private SurfaceCalib surface;
+
+    public bool stalking;
+    public bool returning;
+
+    private Vector3 startingPos;
+    private Quaternion startingRot;
 
     // Use this for initialization
     void Start ()
     {
-        calib = table.GetComponent<SurfaceCalib>();
+        surface = table.GetComponent<SurfaceCalib>();
+
+        stalking = false;
+        returning = true;
+
+        startingPos = transform.localPosition;
+        startingRot = transform.localRotation;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        // Position
-        transform.position = userProjection.position;
-        transform.localPosition = new Vector3(
-            Mathf.Clamp(transform.localPosition.x, -calib.Width * 0.5f + 0.2f, calib.Width * 0.5f - 0.2f), 
-            Mathf.Clamp(transform.localPosition.y, -calib.Height * 0.5f + 0.2f, calib.Height * 0.5f - 0.2f), 
-            0);
+        Vector3 targetPosition = transform.localPosition;
+        Quaternion targetRotation = transform.localRotation;
 
-        // Orientation
-        if (transform.position != userProjection.position)
+        if (stalking)
         {
-            Vector3 userVector = (transform.localPosition - userProjection.localPosition).normalized;
-            transform.localRotation = Quaternion.AngleAxis(Vector3.Angle(Vector3.up, userVector), Vector3.Cross(Vector3.up, userVector));
+            // Position
+            targetPosition = new Vector3(
+                Mathf.Clamp(userProjection.localPosition.x, -surface.Width * 0.5f + 0.2f, surface.Width * 0.5f - 0.2f),
+                Mathf.Clamp(userProjection.localPosition.y, -surface.Height * 0.5f + 0.2f, surface.Height * 0.5f - 0.2f),
+                0);
+
+            // Orientation
+            Vector3 up;
+            if (targetPosition != userProjection.localPosition)
+                up = (transform.localPosition - userProjection.localPosition).normalized;
+            else
+                up = (-userProjection.localPosition).normalized;
+            Vector3 cross = Vector3.Cross(Vector3.up, up);
+            targetRotation = Quaternion.AngleAxis(Vector3.Angle(Vector3.up, up) * (cross.z < 0 ? -1.0f : 1.0f), Vector3.forward);
+
+            // To be on top
+            targetPosition = new Vector3(targetPosition.x, targetPosition.y, -0.01f);
         }
+
+        if(returning)
+        {
+            targetPosition = startingPos;
+            targetRotation = startingRot;
+        }
+
+        transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, 0.3f);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, 0.3f);
     }
 }
