@@ -31,16 +31,6 @@ public class SurfaceRectangle
         }
     }
 
-    public Vector3 Normal
-    {
-        get
-        {
-            Vector3 up = _tl - _bl;
-            Vector3 right = _br - _bl;
-            return Vector3.Cross(up, right);
-        }
-    }
-
     //public GameObject CenterGameObject { get; internal set; }
 
     public SurfaceRectangle(Vector3 BL, Vector3 BR, Vector3 TL, Vector3 TR)

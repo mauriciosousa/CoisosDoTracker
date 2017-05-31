@@ -42,16 +42,19 @@ public class PutThatThere : MonoBehaviour {
     [Range(10, 100)]
     public int cursorSize;
 
+    private TrackerClient tracker;
+
     void Start ()
     {
+        tracker = GameObject.Find("TrackerClientGO").GetComponent<TrackerClient>();
         shapes = new List<Shape>();
 
 	}
 	
 	void Update ()
     {
-        Vector2 p = Input.mousePosition;
-
+        Vector2 p = tracker.cursor;// Input.mousePosition;
+        
         
 
 
@@ -152,7 +155,8 @@ public class PutThatThere : MonoBehaviour {
         }
 
         GUI.color = Color.white;
-        GUI.DrawTexture(new Rect(Input.mousePosition.x - cursorSize / 2, Screen.height - Input.mousePosition.y - cursorSize / 2, cursorSize, cursorSize), cursorTex);
+        //GUI.DrawTexture(new Rect(Input.mousePosition.x - cursorSize / 2, Screen.height - Input.mousePosition.y - cursorSize / 2, cursorSize, cursorSize), cursorTex);
+        GUI.DrawTexture(new Rect(Screen.width - tracker.cursor.x * Screen.width - cursorSize / 2, tracker.cursor.y * Screen.height - cursorSize / 2, cursorSize, cursorSize), cursorTex);
     }
 
     public static int Clamp(int value, int min, int max)
