@@ -9,33 +9,35 @@ public class TrackerClient : MonoBehaviour {
 
 	private Dictionary<string, Human> _humans;
 
+    public GameObject user;
+
 	void Start () {
 		_humans = new Dictionary<string, Human>();
 	}
 
 	void Update () {
-	
+
 		foreach (Human h in _humans.Values)
 		{
 			// get human properties:
 			string id = h.id;
-			string handLeftState = h.body.Properties[BodyPropertiesType.HandLeftState];
+            //string handLeftState = h.body.Properties[BodyPropertiesType.HandLeftState];
 
-			// get human joints positions:
-			Vector3 headPosition = h.body.Joints[BodyJointType.head];
-		}
+            // get human joints positions:
+            user.transform.position = h.body.Joints[BodyJointType.spineBase];
+        }
 
 		// finally
 		_cleanDeadHumans();
 	}
 
 	public void setNewFrame (Body[] bodies)
-	{
-		foreach (Body b in bodies)
+    {
+        foreach (Body b in bodies)
 		{
 			try
 			{
-			string bodyID = b.Properties[BodyPropertiesType.id];
+			string bodyID = b.Properties[BodyPropertiesType.UID];
 			if (!_humans.Keys.Contains(bodyID))
 			{
 				_humans.Add(bodyID, new Human());

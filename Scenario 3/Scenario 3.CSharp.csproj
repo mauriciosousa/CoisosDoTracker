@@ -84,9 +84,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PutThatThere.cs" />
     <Compile Include="Assets\Scripts\StalkerMaster.cs" />
     <Compile Include="Assets\Scripts\SurfaceCalib.cs" />
+    <Compile Include="Assets\Scripts\SurfaceRequest.cs" />
+    <Compile Include="Assets\Scripts\SurfaceRequestListener.cs" />
     <Compile Include="Assets\Scripts\TableStalker.cs" />
     <Compile Include="Assets\Scripts\TableUser.cs" />
     <Compile Include="Assets\Scripts\TrackerClient.cs" />

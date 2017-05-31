@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SurfaceCalib : MonoBehaviour {
 
-    public Transform TL;
+    /*public Transform TL;
     public Transform TR;
     public Transform BL;
-    public Transform BR;
+    public Transform BR;*/
 
     private float width;
     private float height;
@@ -31,19 +31,7 @@ public class SurfaceCalib : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        // Position and Orientation
-        Vector3 up = TL.position - BL.position;
-        Vector3 right = TR.position - TL.position;
-        Vector3 center = (TL.position + BR.position) * 0.5f;
-
-        transform.rotation = Quaternion.LookRotation(Vector3.Cross(right, up), up);
-        transform.position = center;
-
-        width = (TR.position - TL.position).magnitude;
-        height = (TR.position - BR.position).magnitude;
-
-        // Camera
-        Camera.main.orthographicSize = (TL.position - BL.position).magnitude * 0.5f;
+        
     }
 	
 	// Update is called once per frame
@@ -51,4 +39,21 @@ public class SurfaceCalib : MonoBehaviour {
     {
 		
 	}
+
+    public void calibrate(SurfaceRectangle r)
+    {
+        // Position and Orientation
+        Vector3 up = r.SurfaceTopLeft - r.SurfaceBottomLeft;
+        Vector3 right = r.SurfaceTopRight - r.SurfaceTopLeft;
+        Vector3 center = (r.SurfaceTopLeft + r.SurfaceBottomRight) * 0.5f;
+
+        transform.rotation = Quaternion.LookRotation(Vector3.Cross(right, up), up);
+        transform.position = center;
+
+        width = (r.SurfaceTopRight - r.SurfaceTopLeft).magnitude;
+        height = (r.SurfaceTopRight - r.SurfaceBottomRight).magnitude;
+
+        // Camera
+        Camera.main.orthographicSize = (r.SurfaceTopLeft - r.SurfaceBottomLeft).magnitude * 0.5f;
+    }
 }
