@@ -17,7 +17,7 @@ public class FloorUser : MonoBehaviour
     {
         transform.position = user.position;
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
-        transform.rotation = user.rotation;
-        transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
+        transform.localRotation = Quaternion.AngleAxis(Vector3.Angle(-Vector3.forward, user.forward) * (Vector3.Cross(-Vector3.forward, user.forward).y < 0? 1.0f : -1.0f), Vector3.forward);//user.rotation;
+        //transform.localEulerAngles = new Vector3(transform.localEulerAngles.z, 0, 0);
     }
 }
