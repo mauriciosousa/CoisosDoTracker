@@ -44,6 +44,7 @@ public class PutThatThere : MonoBehaviour {
             Vector3 p = ray.GetPoint(distance);
 
             cursor.position = p;
+            cursor.localPosition = new Vector3(cursor.localPosition.x, cursor.localPosition.y, -9.0f);
             cursor.gameObject.SetActive(true);
             
             if (Input.GetKeyDown(KeyCode.Alpha1))
