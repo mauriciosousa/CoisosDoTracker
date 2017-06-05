@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 5.CSharp.Plugins", "Scenario 5.CSharp.Plugins.csproj", "{03C2D51C-4512-3809-2C7F-95E331031B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 5.CSharp", "Scenario 5.CSharp.csproj", "{FFB3714C-D3E8-B601-EC4C-C8AE25CBA7CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C2D51C-4512-3809-2C7F-95E331031B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C2D51C-4512-3809-2C7F-95E331031B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C2D51C-4512-3809-2C7F-95E331031B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C2D51C-4512-3809-2C7F-95E331031B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB3714C-D3E8-B601-EC4C-C8AE25CBA7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB3714C-D3E8-B601-EC4C-C8AE25CBA7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB3714C-D3E8-B601-EC4C-C8AE25CBA7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB3714C-D3E8-B601-EC4C-C8AE25CBA7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

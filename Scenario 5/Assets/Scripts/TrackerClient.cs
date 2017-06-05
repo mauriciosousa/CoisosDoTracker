@@ -9,9 +9,10 @@ public class TrackerClient : MonoBehaviour {
 
 	private Dictionary<string, Human> _humans;
 
-    public GameObject user;
+    public Transform userHead;
+    public Transform userHand;
 
-	void Start () {
+    void Start () {
 		_humans = new Dictionary<string, Human>();
 	}
 
@@ -24,8 +25,9 @@ public class TrackerClient : MonoBehaviour {
             //string handLeftState = h.body.Properties[BodyPropertiesType.HandLeftState];
 
             // get human joints positions:
-            user.transform.position = h.body.Joints[BodyJointType.spineBase];
-            
+            userHead.position = h.body.Joints[BodyJointType.head];
+            userHand.position = h.body.Joints[BodyJointType.rightHand];
+
             break;
         }
 

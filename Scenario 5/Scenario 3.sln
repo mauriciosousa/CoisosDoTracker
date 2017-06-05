@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 3.Plugins", "Scenario 3.Plugins.csproj", "{B98B5A46-EF13-737C-B4AC-B5582279ECDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 3", "Scenario 3.csproj", "{1F2D2EE6-5A7A-B9CC-6046-80AA74A8E459}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B98B5A46-EF13-737C-B4AC-B5582279ECDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98B5A46-EF13-737C-B4AC-B5582279ECDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B98B5A46-EF13-737C-B4AC-B5582279ECDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B98B5A46-EF13-737C-B4AC-B5582279ECDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2D2EE6-5A7A-B9CC-6046-80AA74A8E459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2D2EE6-5A7A-B9CC-6046-80AA74A8E459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2D2EE6-5A7A-B9CC-6046-80AA74A8E459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2D2EE6-5A7A-B9CC-6046-80AA74A8E459}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
