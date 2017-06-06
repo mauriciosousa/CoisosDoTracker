@@ -84,6 +84,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Hands.cs" />
     <Compile Include="Assets\Scripts\StalkerMaster.cs" />
     <Compile Include="Assets\Scripts\SurfaceCalib.cs" />
     <Compile Include="Assets\Scripts\SurfaceRequest.cs" />
