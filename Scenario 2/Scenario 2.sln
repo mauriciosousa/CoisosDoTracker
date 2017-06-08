@@ -1,9 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{3D2B891E-87F5-8587-DCF5-6E520915AFEF}") = "Scenario 2", "Assembly-CSharp-firstpass.csproj", "{6AE0366E-B4B8-391E-34BA-7AEB7FF0F04A}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 2", "Assembly-CSharp-firstpass.csproj", "{6AE0366E-B4B8-391E-34BA-7AEB7FF0F04A}"
 EndProject
-Project("{3D2B891E-87F5-8587-DCF5-6E520915AFEF}") = "Scenario 2", "Assembly-CSharp.csproj", "{A2C52DC4-BE03-9FFD-BD1F-5F0E7C22161E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario 2", "Assembly-CSharp.csproj", "{A2C52DC4-BE03-9FFD-BD1F-5F0E7C22161E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

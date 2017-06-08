@@ -34,9 +34,9 @@ public class FloorUser : MonoBehaviour
     void shoot()
     {
         GameObject b = Instantiate(bullet, this.transform.position,this.transform.rotation);
-        Vector2 rot = new Vector2(transform.up.x, transform.up.y);
+        Vector3 rot = transform.up;
         rot.Normalize();
-        b.GetComponent<Rigidbody2D>().AddForce(rot*10);
+        b.GetComponent<Rigidbody>().AddForce(rot*10);
         
     }
 }

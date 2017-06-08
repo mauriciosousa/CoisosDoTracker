@@ -13,11 +13,12 @@ public class Asteroid : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         Vector3 b = Camera.main.OrthographicBounds().size;
-
+        this.transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, 0);
+        this.transform.up = Camera.main.transform.up;
         if (!initialized)
         {
-            Vector2 iniForce =new Vector2( Random.Range(-4.0f, 4.0f), Random.Range(-4.0f, 4.0f));
-            this.transform.GetComponent<Rigidbody2D>().AddForce(iniForce);
+            Vector3 iniForce = Camera.main.transform.up* Random.Range(-3.0f, 3.0f) + Camera.main.transform.right* Random.Range(-3.0f, 3.0f);
+            this.transform.GetComponent<Rigidbody>().AddForce(iniForce);
             initialized = true;
         }
 
@@ -47,8 +48,9 @@ public class Asteroid : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnCollisionEnter(Collision coll)
     {
+        Debug.Log("TEST");
         if (coll.gameObject.tag == "bullet")
         {
             int id1 = Random.Range(0, 3);
@@ -57,17 +59,19 @@ public class Asteroid : MonoBehaviour {
             Object.Destroy(this.gameObject);
             if (replacementAsteroids.Length != 0)
             {
-                float rad =  gameObject.GetComponent<CircleCollider2D>().radius;
+                float rad =  gameObject.GetComponent<SphereCollider>().radius;
                 Vector3 posa = new Vector3(transform.position.x + rad/2, transform.position.y + rad/2, transform.position.z) ;
                 Vector3 posb = new Vector3(transform.position.x - rad/2, transform.position.y - rad/2, transform.position.z);
-                bool spawna = false;
-                bool spawnb = false;
-                if (!Physics2D.OverlapCircle(posa, rad / 2)) spawna = true;
-                if (!Physics2D.OverlapCircle(posb, rad / 2)) spawnb = true;
+                //bool spawna = false;
+                //bool spawnb = false;
+                //if (!Physics2D.OverlapCircle(posa, rad / 2)) spawna = true;
+                //if (!Physics2D.OverlapCircle(posb, rad / 2)) spawnb = true;
 
-                if(spawna) Instantiate<GameObject>(replacementAsteroids[id1],posa,this.transform.rotation);
-                if(spawnb) Instantiate<GameObject>(replacementAsteroids[id2], posb, this.transform.rotation);
-
+                //if(spawna) 
+                GameObject a = Instantiate<GameObject>(replacementAsteroids[id1],posa,this.transform.rotation);
+                //if(spawnb) 
+                GameObject b = Instantiate<GameObject>(replacementAsteroids[id2], posb, this.transform.rotation);
+              
             }
          
         }
