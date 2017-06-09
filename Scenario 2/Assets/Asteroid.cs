@@ -68,9 +68,9 @@ public class Asteroid : MonoBehaviour {
                 //if (!Physics2D.OverlapCircle(posb, rad / 2)) spawnb = true;
 
                 //if(spawna) 
-                GameObject a = Instantiate<GameObject>(replacementAsteroids[id1],posa,this.transform.rotation);
+                GameObject a = Instantiate<GameObject>(replacementAsteroids[id1],posa,this.transform.rotation,this.transform.parent);
                 //if(spawnb) 
-                GameObject b = Instantiate<GameObject>(replacementAsteroids[id2], posb, this.transform.rotation);
+                GameObject b = Instantiate<GameObject>(replacementAsteroids[id2], posb, this.transform.rotation, this.transform.parent);
               
             }
          
