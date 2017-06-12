@@ -1,12 +1,12 @@
 % Negative Space Config File lol
 
 
-ns.length=0.4
+ns.length=0.1
 
 
 % LOCATION A
 
-A.machine.address=146.193.224.141
+A.machine.address=192.168.0.102
 
 A.rpc.port=5000
 A.rcv.handheld.port=5001
@@ -24,7 +24,7 @@ A.sensors.listen=5007
 
 % LOCATION B
 
-B.machine.address=146.193.224.133
+B.machine.address=192.168.0.103
 
 B.rpc.port=5000
 B.rcv.handheld.port=5101
