@@ -9,7 +9,7 @@ public class PerspectiveProjection : MonoBehaviour
     private bool _running = false;
     public bool Running { get { return _running; } }
 
-    public bool Active = false;
+    public bool Active = true;
 
     private bool estimateViewFrustum = true;
     private bool setNearClipPlane = false;

@@ -147,7 +147,7 @@ public class Main : MonoBehaviour {
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (false & Input.GetKeyDown(KeyCode.Space))
                 {
                     if (_prespectiveProjection.Running && _prespectiveProjection.Active)
                     {

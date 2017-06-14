@@ -71,6 +71,7 @@ public class BodiesManager : MonoBehaviour
             try
             {
                 string bodyID = b.Properties[BodyPropertiesType.UID];
+                print(bodyID + " " + b.Joints[BodyJointType.head]);
                 if (!_humans.ContainsKey(bodyID))
                 {
                     _humans.Add(bodyID, new Human());

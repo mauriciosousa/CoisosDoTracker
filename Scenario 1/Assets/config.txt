@@ -1,7 +1,7 @@
 % Negative Space Config File lol
 
 
-ns.length=0.1
+ns.length=0
 
 
 % LOCATION A

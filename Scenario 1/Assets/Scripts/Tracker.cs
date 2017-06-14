@@ -126,7 +126,8 @@ public class Tracker : MonoBehaviour
 
             //
             GameObject origin = GameObject.Find("RemoteOrigin");
-            cloudobj.transform.parent = origin.transform;
+            //cloudobj.transform.parent = origin.transform;
+            cloudobj.transform.SetParent(origin.transform);
             cloudobj.transform.localPosition = pi;
             cloudobj.transform.localRotation = ri;
 
