@@ -117,7 +117,7 @@ public class Tracker : MonoBehaviour
             GameObject cloudobj = new GameObject(id);
             cloudobj.transform.localPosition = Vector3.zero;
             cloudobj.transform.localRotation = Quaternion.identity; 
-            cloudobj.transform.localScale = new Vector3(-1, 1, 1);
+            cloudobj.transform.localScale = (new Vector3(-1, 1, 1)) * 2.0f;
             cloudobj.AddComponent<PointCloudSimple>();
             PointCloudSimple cloud = cloudobj.GetComponent<PointCloudSimple>();
             _clouds.Add(id, cloud);

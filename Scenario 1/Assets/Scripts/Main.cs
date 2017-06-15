@@ -143,6 +143,10 @@ public class Main : MonoBehaviour {
                 _tcpKinectListener.init();
                 _tracker.init();
 
+                ScreenDisplay screenDisplay = GameObject.Find("ScreenDisplay").GetComponent<ScreenDisplay>();
+                screenDisplay.screenCenter = localScreenCenter.transform;
+                screenDisplay.init();
+
 
             }
             else

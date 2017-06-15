@@ -244,8 +244,8 @@ public class PointCloudSimple : MonoBehaviour {
         Material other = Instantiate(mat) as Material;
 
         // Update size for each material.
-        //mat.SetFloat("_Size", 0.015f);  // HR
-        //other.SetFloat("_Size", 0.025f); // LR
+        mat.SetFloat("_Size", 1.55f);  // HR
+        other.SetFloat("_Size", 2.5f); // LR
 
         for (int i = 0; i < 4; i++) {
             GameObject a = new GameObject("highres_cloud" + i);
